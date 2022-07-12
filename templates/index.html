@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B2Brain Dashboard </title>
+    {% load static %}
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="{% static '/style.css' %}">
+     
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+</head>
+<body>
+    <nav>
+        <div class="logo-name">
+            <div class="logo-image">
+                <img src="static/svgs/B2Brain.svg" alt="">
+            </div>
+
+            <span class="logo_name">B2Brain</span>
+        </div>
+
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li><a href="#">
+                    <i class="uil uil-estate"></i>
+                    <span class="link-name">Dashboard</span>
+                </a></li>
+                <li><a href="#">
+                    <i class="uil uil-star"></i>
+                    <span class="link-name">Intels</span>
+                </a></li>
+                <li><a href="#">
+                    <i class="uil uil-user-square"></i>
+                    <span class="link-name">Leads</span>
+                </a></li>
+                <li><a href="#">
+                    <i class="uil uil-building"></i>
+                    <span class="link-name">Accounts</span>
+                </a></li>
+                
+                <li><a href="#">
+                    <i class="uil uil-setting"></i>
+                    <span class="link-name">Preferences</span>
+                </a></li>
+               
+                <li><a href="#">
+                    <i class="uil uil-link"></i>
+                    <span class="link-name">Integrations</span>
+                </a></li>
+                <li><a href="#">
+                    <i class="uil uil-users-alt"></i>
+                    <span class="link-name">Team</span>
+                </a></li>
+                <li><a href="#">
+                    <i class="uil uil-comments-alt"></i>
+                    <span class="link-name">Help/Support</span>
+                </a></li>
+            </ul>
+            
+        </div>
+    </nav>
+
+    <section class="dashboard">
+        <div class="top">
+
+            <div class="search-box">
+                <i class="uil uil-search" id="sbtn"></i>
+                <i class="uil uil-times" id="tbtn" onclick="ShowHeroHideList()"></i>
+                <input type="text"  name="searchBar" id="searchBar"placeholder="Search by account name or website" onclick="hideHeroShowList()">
+                
+            </div>
+        </div>
+
+        <div class="dash-content">
+            <div class="container" id="hero">
+                <img src="/static/svgs/Hero.svg" alt="">
+            </div>
+            <div class="container" id="list">
+                <ul id="companiesList"></ul>
+            </div>
+        
+        </div>
+    </section>
+    {% load static %}  
+   <script src="{% static '/index.js' %}" type="text/javascript"></script>     
+</body>
+</html>
