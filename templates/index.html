@@ -8,9 +8,11 @@
     {% load static %}
     <!----======== CSS ======== -->
     <link rel="stylesheet" href="{% static '/style.css' %}">
-     
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
 
 </head>
 <body>
@@ -27,7 +29,7 @@
             <ul class="nav-links">
                 <li><a href="#">
                     <i class="uil uil-estate"></i>
-                    <span class="link-name">Dashboard</span>
+                    <span class="link-name" id="main">Dashboard</span>
                 </a></li>
                 <li><a href="#">
                     <i class="uil uil-star"></i>
@@ -37,16 +39,35 @@
                     <i class="uil uil-user-square"></i>
                     <span class="link-name">Leads</span>
                 </a></li>
-                <li><a href="#">
-                    <i class="uil uil-building"></i>
-                    <span class="link-name">Accounts</span>
-                </a></li>
-                
-                <li><a href="#">
-                    <i class="uil uil-setting"></i>
-                    <span class="link-name">Preferences</span>
-                </a></li>
-               
+                <li>
+                    <div class="icon-link">
+                        <a href="#">
+                            <i class="uil uil-building"></i>
+                            <span class="link-name link_name">Accounts</span>
+                        </a>
+                      <i class='bx bxs-chevron-down arrow'></i>
+                    </div>
+                    <ul class="sub-menu">
+                        <!-- <vr></vr> -->
+                      <li><a href="#">Manage all</a></li>
+                      <li><a href="#">Track new accounts</a></li>
+                      <li><a href="#">Bulk Import</a></li>
+                    </ul>
+                  </li>
+                <li>
+                    <div class="icon-link">
+                        <a href="#">
+                            <i class="uil uil-setting"></i>
+                            <span class="link-name link_name">Preferences</span>
+                        </a>
+                      <i class='bx bxs-chevron-down arrow'></i>
+                    </div>
+                    <ul class="sub-menu">
+                      <li><a href="#">Product Focus</a></li>
+                      <li><a href="#">Intel Preferences</a></li>
+                      <li><a href="#">Lead Persona</a></li>
+                    </ul>
+                </li>
                 <li><a href="#">
                     <i class="uil uil-link"></i>
                     <span class="link-name">Integrations</span>
@@ -71,7 +92,7 @@
                 <i class="uil uil-search" id="sbtn"></i>
                 <i class="uil uil-times" id="tbtn" onclick="ShowHeroHideList()"></i>
                 <input type="text"  name="searchBar" id="searchBar"placeholder="Search by account name or website" onclick="hideHeroShowList()">
-                
+                <img id="search-bar-side-logo" src="/static/pngs/Logo.png"/>
             </div>
         </div>
 
@@ -80,12 +101,39 @@
                 <img src="/static/svgs/Hero.svg" alt="">
             </div>
             <div class="container" id="list">
-                <ul id="companiesList"></ul>
+                    <h2 class="title">Similar accounts</h2>
+                    <ul id="companiesList">
+        
+                    </ul>
+
+                <!-- </div> -->
+                    <!-- <div class="float-child-element-right">
+                        <h2 class="title yellow">Quick Actions</h2>
+                        <ul class="yellow actions">
+                            <li>Manage all</li>
+                            <li>Track new accounts</li>
+                            <li>Bulk Import</li>
+                        </ul>
+                    </div> -->
+                </div>
+
+
             </div>
         
         </div>
     </section>
+
     {% load static %}  
    <script src="{% static '/index.js' %}" type="text/javascript"></script>     
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"> </script>
+    <script src = "https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.1.0.js" type = "text/javascript"></script>
+    <script type = 'text/javascript' src = 'knockout-3.3.0.js'></script>
+    <script src="index.js"></script>
+
+    <script>
+    
+    </script>
+    
 </body>
 </html>

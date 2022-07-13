@@ -3,6 +3,15 @@ const companiesList = document.getElementById('companiesList');
 let result = [];
 const url = 'https://tva.staging.b2brain.com/search/autocomplete_org_all/';
 
+//Dropdown menu
+let arrow = document.querySelectorAll(".arrow");
+    for (var i = 0; i < arrow.length; i++) {
+      arrow[i].addEventListener("click", (e) => {
+        let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+        arrowParent.classList.toggle("showMenu");
+      });
+    }
+
 function hideHeroShowList() {
     var sb = document.getElementById("sbtn");
     var tb = document.getElementById("tbtn");
@@ -22,6 +31,9 @@ function hideHeroShowList() {
 
     tb.style.display = "none";
     sb.style.display = "block";
+
+    const a = document.getElementById("searchBar");
+    a.value = '';
     
     var x = document.getElementById("hero");
       x.style.display = "block";
@@ -68,15 +80,22 @@ const displayCompanies = (companies) => {
         .map((data) => {
             return `
             <li class="data">
-               <img src="${data.logo}"></img>
-                <h4>${data.company}</h4>
-                <p>${data.website}</p>
-                <button id="btn">Track</button>
+               <div id="profileImage" style="background:${data.color};" >${data.company[0]}</div>
+               <div id="company-name">${data.company}</div>
+               <p id="website">${data.website}</p>
             </li>
         `;
         })
         .join('');
         companiesList.innerHTML = htmlString;
 };
+
+$(document).ready(function(){
+  var firstName = $('#company-name').text();
+  var intials = firstName.charAt(0);
+  var profileImage = $('#profileImage').text(intials);
+});
+
+
 
 loadCompanies();
