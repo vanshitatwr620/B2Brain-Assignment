@@ -51,15 +51,6 @@ body.dark{
     transition: all 0.3s ease;
 }
 
-::-webkit-scrollbar-thumb:hover {
-    /* background: #0b3cc1; */
-}
-
-body.dark::-webkit-scrollbar-thumb:hover,
-body.dark .activity-data::-webkit-scrollbar-thumb:hover{
-    /* background: #3A3B3C; */
-}
-
 nav{
     position: fixed;
     top: 0;
@@ -155,35 +146,11 @@ nav.close li a .link-name{
     opacity: 0;
     pointer-events: none;
 }
-.nav-links li a:hover i,
-.nav-links li a:hover .link-name{
-    /* color: var(--primary-color); */
-}
+
 body.dark .nav-links li a:hover i,
 body.dark .nav-links li a:hover .link-name{
     color: var(--text-color);
 }
-
-.mode-toggle .switch{
-    position: relative;
-    display: inline-block;
-    height: 22px;
-    width: 40px;
-    border-radius: 25px;
-    background-color: var(--toggle-color);
-}
-/* .switch:before{
-    content: "";
-    position: absolute;
-    left: 5px;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 15px;
-    width: 15px;
-    background-color: var(--panel-color);
-    border-radius: 50%;
-    transition: var(--tran-03);
-} */
 
 .searchBar{
     width: 110vw !important;
@@ -265,7 +232,7 @@ nav.close ~ .dashboard .top{
 }
 
 .search-box #search-bar-side-logo{
-    margin-left: 940px;
+    float: right;
     border-radius: 0%;
     opacity: 0.9;
 }
@@ -275,33 +242,16 @@ nav.close ~ .dashboard .top{
 }
 
 .dash-content .container #hero {
-    left: -5%;
+    margin-left: -1% !important;
 }
 
-/* .dash-content .title i{
-    position: relative;
-    height: 35px;
-    width: 35px;
-    background-color: var(--primary-color);
-    border-radius: 6px;
-    color: var(--title-icon-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-} */
-/* .dash-content .title .text{
-   
-    margin-left: 10px;
-} */
-
-.dash-content #list .title{
+.dash-content #list .title-accounts{
     color: #000000;
     font-size: 22px;
     opacity: 0.5;
     position: absolute;
     /* height: 30px; */
-    left: 29px;
+    left: 20px;
     top: 90px;
 }
 
@@ -404,36 +354,34 @@ nav.close ~ .dashboard .top{
 .dash-content #list #companiesList {
     padding-inline-start: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 10px;
     margin-top: 65px !important;
 }
 
 .data {
     list-style-type: none;
-    border-radius: 3px;
     padding: 10px 20px;
     display: grid;
-    grid-template-columns: 1fr 2r 1fr;
     grid-template-areas:
-        'image company btn'
-        'image website btn';
+        'image company'
+        'image website';
     justify-content: left;
-    margin-top: 12px;
+    position: relative;
 }
 
 .data #company-name {
     grid-area: company;
     margin-top: 5px;
     margin-left: 15px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
 }
 
 .data > p {
     grid-area: website;
-    margin-top: 10px;
-    font-size: 12px;
+    margin-top: -3px;
+    font-size: 10px;
     font-weight: 500;
     color: #000000;
     opacity: 0.5;
@@ -443,21 +391,27 @@ nav.close ~ .dashboard .top{
 .data #profileImage {
     grid-area: image;
     max-height: 100px;
+    position: relative;
+    z-index: 0;
 }
 
 
-.data > button {
-    grid-area: btn;
-    font-size: small;
+ .data > button {
+    position: absolute;
+    right: 55px;
+    top: 13px;
+    z-index: 100;
+    justify-content: right;
+    font-size: 12px;
     border-radius: 2px;
-    width: 58px;
-    height: 30px;
+    width: 48px;
+    height: 23px;
+    font-weight: 400;
     color:#FF6059;
     border: 1px solid #FF6059;
     cursor: pointer;
     background-color: #fff;
-    margin-right: 100px;
-}
+} 
 
 .data > button:focus {
     color: #1AAB2B;
@@ -466,16 +420,15 @@ nav.close ~ .dashboard .top{
 }
 
 #profileImage {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     background: #512DA8;
     font-size: 24px;
     font-weight: 700;
     color: #fff;
     text-align: center;
-    padding: 8px 8px;
+    padding: 5px 5px;
     border-radius:2px;
-    margin-left: 10px;
   }
 
 #searchWrapper {
@@ -518,7 +471,7 @@ nav.close ~ .dashboard .top{
 }
 
 .nav-links li .sub-menu{
-    padding-left: 45px;
+    padding-left: 22px;
     margin-top: -10px;
     display: none;
   }
@@ -534,35 +487,44 @@ nav.close ~ .dashboard .top{
     color: #000000;
     opacity: 0.6;
     font-size: 14px;
+    height: 35px;
+    border-left: 1.5px solid #cdcaca;
+    padding-left: 23px;
   }
-/* 
-  .float-parent-element { 
-    width: 100%; 
-} 
-.float-child-element { 
-    float: left; 
-    width: 50%; 
-} 
 
+  .grid-parent {
+    display: grid;
+    width: 79vw; 
+    grid-template-rows: 69vw 10vw;
+  }
 
-.yellow{
+  .float-child-element-left {
+    float: left;
+    width: 65vw;
+  }
+
+  .float-child-element-right {
     float: right;
+    position: absolute;
+    right: 30px;
+    top: 80px;
+  }
+
+  .dash-content #list .title-actions {
+    
     color: #000000;
-    opacity: 0.5; 
-     margin-left:20vw !important;  
-    width: 200px; 
+    font-size: 22px;
+    opacity: 0.5;
+  }
+  .actionsList {
+    float: right;
     list-style: none;
     font-weight: 700;
-}
+    font-size: 14px;
+    padding-top: 30px;
+    padding-right: 40px;
+  }
 
-.yellow li{
-
-    padding-top: 10%;
-    width: 200px;
-    font-size: 15px;
-}
-
-.actions {
-    color:  black;
-    opacity: 1;
-} */
+  .actionsList li{
+    padding-bottom: 30px;
+  }

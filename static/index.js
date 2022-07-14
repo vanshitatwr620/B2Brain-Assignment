@@ -83,19 +83,12 @@ const displayCompanies = (companies) => {
                <div id="profileImage" style="background:${data.color};" >${data.company[0]}</div>
                <div id="company-name">${data.company}</div>
                <p id="website">${data.website}</p>
+               <button class="btn">Track</button>
             </li>
         `;
         })
         .join('');
         companiesList.innerHTML = htmlString;
 };
-
-$(document).ready(function(){
-  var firstName = $('#company-name').text();
-  var intials = firstName.charAt(0);
-  var profileImage = $('#profileImage').text(intials);
-});
-
-
 
 loadCompanies();
