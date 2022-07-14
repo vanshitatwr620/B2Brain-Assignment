@@ -11,3 +11,4 @@ Preliminary Assessment
 <img width="960" alt="B2Brain Dashboard api - search" src="https://user-images.githubusercontent.com/60813816/179094381-d28e2979-9480-4eb2-b93e-eb121cdb07e6.png">
 
 
+Hello is the project folder, home is the app folder.
